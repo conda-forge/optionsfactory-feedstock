@@ -1,5 +1,5 @@
 {% set name = "optionsfactory" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 43f0c4ace9ecde6e755aaeef0bcd9ff78c2503e85d189c6db51c7b8387183819
+  sha256: 6a08151177ae9c64efb48720c8441cec732b6b00d1d91ba1484abf3b17a1871d
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -35,7 +35,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Python package for handling user-provided options with flexible defaults, documentation and checking'
+  summary: Python package for handling user-provided options with flexible defaults, documentation and checking
 
   description: |
     OptionsFactory allows you to define a set of options, which can have (if you like): default
