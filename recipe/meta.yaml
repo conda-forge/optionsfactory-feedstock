@@ -1,5 +1,5 @@
 {% set name = "optionsfactory" %}
-{% set version = "1.0.4" %}
+{% set version = "1.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6a08151177ae9c64efb48720c8441cec732b6b00d1d91ba1484abf3b17a1871d
+  sha256: 5abca3c6644d41e240892a018650320f6ac60149426a5c0dae77398a6f60ea99
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -27,6 +27,7 @@ test:
   requires:
     - pytest
     - pyyaml
+    - dill
   commands:
     - pytest --pyargs optionsfactory
 
