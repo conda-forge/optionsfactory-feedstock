@@ -27,6 +27,7 @@ test:
   requires:
     - pytest
     - pyyaml
+    - dill
   commands:
     - pytest --pyargs optionsfactory
 
