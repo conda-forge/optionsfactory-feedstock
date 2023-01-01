@@ -1,5 +1,5 @@
 {% set name = "optionsfactory" %}
-{% set version = "1.0.7" %}
+{% set version = "1.0.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 541f296309fedae5114d2c563a583d903110bacc166c1a83b9de77000cf13db4
+  sha256: c01d919a21580488fffc144eb73c2bfaf77a8e21aca2757a4c93b7f3a5bf5afb
 
 build:
   noarch: python
