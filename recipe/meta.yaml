@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: dc5e316b2734ed210bcff333c800ec06d97c7cf75f41d79d7a0a7c6fa608d403
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -28,6 +28,7 @@ test:
     - pytest
     - pyyaml
     - dill
+    - python {{ python_min }}
   commands:
     - pytest --pyargs optionsfactory
 
